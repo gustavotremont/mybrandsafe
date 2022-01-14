@@ -4,6 +4,8 @@ const logger = require('morgan');
 const path = require('path');
 require('dotenv').config();
 
+const { sequelize } = require('./models')
+
 /****************** Project Dependencies ******************/
 
 
@@ -28,4 +30,6 @@ app.get('/', (req,res) =>{
 /****************** Actice Server ******************/
 app.listen(port, () => {
     console.log(`ServerOn http://localhost:${port}`)
+    await sequelize.authenticate()
+    console.log('Database Connected');
 })
