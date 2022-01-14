@@ -9,18 +9,23 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gustavotremont/project_template.git"
+    "url": "git+https://github.com/gustavotremont/mybrandsafe.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/gustavotremont/project_template/issues"
+    "url": "https://github.com/gustavotremont/mybrandsafe.git/issues"
   },
-  "homepage": "https://github.com/gustavotremont/project_template#readme",
+  "homepage": "https://github.com/gustavotremont/mybrandsafe.git#readme",
   "dependencies": {
+    "axios": "^0.24.0",
     "express": "^4.17.1",
     "morgan": "^1.10.0",
-    "node-fetch": "^2.6.6",
-    "pug": "^3.0.2"
+    "pg": "^8.7.1",
+    "sequelize": "^6.13.0"
+  },
+  "devDependencies": {
+    "concurrently": "^7.0.0",
+    "dotenv": "^11.0.0"
   }
 }
