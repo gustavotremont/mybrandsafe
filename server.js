@@ -11,6 +11,7 @@ const { sequelize } = require('./models')
 
 /****************** Import routes ******************/
 const usersIndex = require('./routes/users')
+const assetsIndex = require('./routes/assets')
 
 /****************** Enable Express ******************/
 const app = express()
@@ -24,6 +25,7 @@ app.use(logger('dev')) // habilitar Morgan con preset dev
 
 /****************** Routes ******************/
 app.use('/api', usersIndex )
+app.use('/api', assetsIndex )
 app.get('/', (req,res) =>{
     res.sendFile(path.join(__dirname+'/client/build/index.html'));
 });
