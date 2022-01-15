@@ -10,7 +10,7 @@ const { sequelize } = require('./models')
 
 
 /****************** Import routes ******************/
-
+const usersIndex = require('./routes/users')
 
 /****************** Enable Express ******************/
 const app = express()
@@ -23,12 +23,13 @@ app.use(express.static(path.join(__dirname, 'client/build')));
 app.use(logger('dev')) // habilitar Morgan con preset dev
 
 /****************** Routes ******************/
+app.use('/api', usersIndex )
 app.get('/', (req,res) =>{
     res.sendFile(path.join(__dirname+'/client/build/index.html'));
 });
 
 /****************** Actice Server ******************/
-app.listen(port, () => {
+app.listen(port, async () => {
     console.log(`ServerOn http://localhost:${port}`)
     await sequelize.authenticate()
     console.log('Database Connected');
