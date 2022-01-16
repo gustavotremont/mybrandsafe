@@ -9,6 +9,7 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
+
     const email = e.target.email.value
     const password = e.target.password.value
     axios.post('/api/session/login', {email, password})
