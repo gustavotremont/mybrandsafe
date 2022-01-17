@@ -28,7 +28,7 @@ app.get('/', (req,res) =>{
 });
 
 /****************** Actice Server ******************/
-app.listen(port, () => {
+app.listen(port, async () => {
     console.log(`ServerOn http://localhost:${port}`)
     await sequelize.authenticate()
     console.log('Database Connected');
