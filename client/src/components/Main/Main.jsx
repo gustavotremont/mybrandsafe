@@ -1,17 +1,16 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
 import Dashboard from "../Dashboard";
+import Landing from '../Landing';
 
 function Main() {
   return (
-    <div>
-
+    <main>
         <Routes>
-          <Route path='/' element={<div>Este es el Home</div>}/>
+          <Route path='/' element={<Landing/>}/>
           <Route path='dashboard/*' element={<Dashboard/>}/>
         </Routes>
-
-    </div>
+    </main>
   )
 }
 
