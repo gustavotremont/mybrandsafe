@@ -24,12 +24,12 @@ function Nav() {
       {
         session
           ? <>
-              <Link to='/dashboard'>Dashboard</Link>
+              <Link to='/dashboard/login'>Dashboard</Link>
               <button style={{width: 100}} onClick={handleLogOut} >Logout</button>
             </>
           : <>
-              <Link to='/login'>Login</Link>
-              <Link to='/signup'>Signup</Link>
+              <Link to='/dashboard/login'>Login</Link>
+              <Link to='/dashboard/signup'>Signup</Link>
             </>
       }
       

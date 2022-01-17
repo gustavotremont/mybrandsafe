@@ -70,7 +70,7 @@ const authLogin = async (req, res) => {
 const session = {
     login,
     logout,
-    authLogin
+    authLogin,
 }
 
 module.exports = session

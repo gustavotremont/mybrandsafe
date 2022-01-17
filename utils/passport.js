@@ -16,7 +16,7 @@ opts.secretOrKey = process.env.JWT_SECRET;
 
 const passportJWTStrategy = (passport) => {
     passport.use( new JwtStrategy(opts, async (jwtPayload, done) => {
-        const user = await Users.getUser(jwtPayload.email);
+        const user = await Users.findOne({email: jwtPayload.email});
         if (user) {
             done(null, user);
         } else {
