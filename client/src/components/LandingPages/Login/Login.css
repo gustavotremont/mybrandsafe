@@ -1,0 +1,71 @@
+
+.divbrand1 {
+
+    background: #0077B6;
+    position: relative;
+    width: 50%;
+    height:1024px;
+}
+    
+.icon {
+            
+    position: relative;
+    padding: 4%;
+    
+}
+    
+.brand2 {
+            
+    position: relative;
+    margin-top: 20%;
+    margin-left: 20%;
+    width: 50%;
+    display: flex;
+
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 72px;
+    color: #F2F9FC;
+    display: flex;
+}
+    
+.brand3{
+    
+margin-left: 20%;	
+width: 436px;
+height: 96px;
+color: #F2F9FC;
+display: flex;
+font-family: 'Inter', sans-serif;
+font-size: 18px;
+font-style: normal;
+font-weight: normal;
+line-height: 32px;
+display: flex;
+flex-direction: row-reverse;
+    
+
+}
+    
+.formlogin {
+    
+width: 100%;
+max-width: 600px;
+margin: 0 auto;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+margin-top: 1%;
+box-shadow: #4a5568;
+    
+}
+    
+.super {
+    
+display: flex;
+background: #F2F9FC;
+
+}
+      
