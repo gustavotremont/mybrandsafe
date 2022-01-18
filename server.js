@@ -9,8 +9,6 @@ require("dotenv").config();
 
 const { sequelize } = require("./models");
 
-/****************** Project Dependencies ******************/
-
 /****************** Import routes ******************/
 const usersRoutes = require('./routes/users')
 const assetsRoutes = require('./routes/assets')
