@@ -1,25 +1,114 @@
+.flex-division{
+    height: 100vh;
+    display: flex;
+}
+
+.hero{
+    width: 50%;
+    background: #0077B6;
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.hero-logo {
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 46px;
+    letter-spacing: 0.15px;
+    color: #48CAE4;
+    margin: 40px 0 16px 40px;
+}
+
+.hero-logo-altcolor {
+    color: #F2F9FC;
+}
+
+.hero-title {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 72px;
+    line-height: 98px;
+    font-feature-settings: 'salt' on, 'liga' off;
+    color: #F2F9FC;
+    text-align: start;
+    margin: 240px 0 0 90px;
+}
+
+.hero-text {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 32px;
+    font-feature-settings: 'salt' on, 'liga' off;
+    color: #F2F9FC;
+    margin-left: 90px;
+    text-align: start;
+    width: 450px;
+}
+
+.form-section{
+    width: 50%;
+    background-color: #F2F9FC;;
+    height: inherit;
+}
+
+.form-body{
+    margin: 172px 136px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-title {
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 26px;
+    text-align: start;
+
+    color: #0077B6;;
+}
+
+.form-label {
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+
+    color: #0077B6;
+}
+
+/* .form-input {
+
+} */
+/* .flex {
+    height: 100vh;
+}
 
 .divbrand1 {
-
     background: #0077B6;
     position: relative;
     width: 50%;
     height:1024px;
 }
     
-.icon {
-            
+.icon {        
     position: relative;
     padding: 4%;
-    
 }
     
-.brand2 {
-            
+.brand2 {       
     position: relative;
-    margin-top: 20%;
-    margin-left: 20%;
-    width: 50%;
+    margin: 20% 0 0 20%;
+    width: 60%;
     display: flex;
 
     font-family: 'Inter', sans-serif;
@@ -28,23 +117,24 @@
     font-size: 72px;
     color: #F2F9FC;
     display: flex;
+    text-align: start;
 }
     
 .brand3{
     
-margin-left: 20%;	
-width: 436px;
-height: 96px;
-color: #F2F9FC;
-display: flex;
-font-family: 'Inter', sans-serif;
-font-size: 18px;
-font-style: normal;
-font-weight: normal;
-line-height: 32px;
-display: flex;
-flex-direction: row-reverse;
-    
+    margin-left: 20%;	
+    width: 436px;
+    height: 96px;
+    color: #F2F9FC;
+    display: flex;
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 32px;
+    display: flex;
+    flex-direction: row-reverse;
+    text-align: start;
 
 }
     
@@ -68,4 +158,4 @@ display: flex;
 background: #F2F9FC;
 
 }
-      
+       */
