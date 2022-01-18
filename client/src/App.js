@@ -1,4 +1,4 @@
-import './App.css';
+import './styles/main.scss';
 import {BrowserRouter} from 'react-router-dom'
 import Main from './components/Main'
 import Login from './components/LandingPages/Login'

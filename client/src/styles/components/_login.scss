@@ -1,0 +1,132 @@
+.hero{
+    width: 50%;
+    background: $primary-color;
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    &--logo {
+        @include font-style('Nunito', normal, 800, 32px, 46px, $secundary-color);
+        letter-spacing: 0.15px;
+        margin: 40px 0 16px 40px;
+
+        &--altcolor {
+            color: $background-color;
+        }
+    }
+
+    &--info {
+        @include flex-center;
+        max-width: 527px;
+        margin: 0 auto;
+        min-height: calc(100vh - 200px);
+
+        font-feature-settings: 'salt' on, 'liga' off;
+        text-align: start;
+
+        &--title {
+            @include font-style('Inter', normal, 800, 72px, 98px, $background-color);
+        }
+
+        &--text {
+            @include font-style('Inter', normal, 400, 18px, 32px, $background-color);
+            padding-right: 90px;
+        }
+    }
+}
+
+.form-section{
+    width: 50%;
+    background-color: $background-color;
+    height: inherit;
+}
+
+.form-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    min-height: 100vh;
+    width: 45vh;
+    margin: 0 auto;
+
+    &--title {
+        @include font-style('Nunito', normal, bold, 32px, 26px, #000000);
+        margin-bottom: 16px;
+    }
+
+    &--span {
+        @include font-style('Inter', normal, normal, 18px, 28px, #8692A6);
+        border-bottom: 1px solid #A9A9A9;
+        padding-bottom: 16px;
+        margin-bottom: 32px;
+    }
+
+    &--field{
+        margin-bottom: 85px;
+        display: flex;
+        flex-direction: column;
+
+        @include font-style('Nunito', normal, normal, 18px, 22px, $primary-color);
+
+        &--label {
+            margin: 0 0 5px 16px;
+        }
+
+        &--input {
+            padding: 12px 16px;
+            width: 464px;
+            height: 64px;
+            background: #FFFFFF;
+            border: 1px solid $secundary-color;
+            box-sizing: border-box;
+            border-radius: 20px;
+
+            &:focus {
+                border: 1px solid $primary-color;
+                outline: none;
+            }
+        }
+    }
+
+    &--remember {
+        margin-bottom: 32px;
+
+        &--input {
+            background: #FFFFFF;
+            border: 0.5px solid $primary-color;
+        }
+
+        &--label {
+            @include font-style('Nunito', normal, normal, 18px, 22px, #696F79);
+            margin-left: 10px;
+        }
+    }
+
+    &--button{
+        width: 464px;
+        height: 64px;
+        background: $primary-color;
+        border-radius: 16px;
+        @include font-style('Nunito', normal, bold, 24px, 22px, #FFFFFF);
+        margin-bottom: 48px;
+
+        &:focus{
+            background: #FFFFFF;
+            color: $primary-color;
+            border: 1px solid $primary-color;
+        }
+    }
+
+    &--login {
+        @include font-style('Nunito', normal, bold, 14px, 22px, #696F79);
+        text-align: center;
+
+        &--link {
+            color: $primary-color;
+            text-decoration: none;
+        }
+    }
+
+}
