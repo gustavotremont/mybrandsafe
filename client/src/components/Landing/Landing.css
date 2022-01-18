@@ -1,0 +1,119 @@
+.landing {
+    display: flex;
+    flex-direction: column;
+    background: #F2F9FC;
+    height: 100vh;
+}
+
+.landing-header {
+    display: flex;
+    justify-content: space-between;
+    margin: 40px;
+}
+
+.landing-logo {
+    margin: 0;
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 32px;
+    letter-spacing: 0.15px;
+    line-height: 46px;
+    color: #48CAE4;
+}
+
+.landing-logo-altcolor{
+    color: #0077B6;
+}
+
+.landing-buttons {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-column-gap: 30px;
+}
+
+.landing-button {
+    width: 125px;
+    height: 45px;
+
+    background: #0077B6;
+    border-radius: 20px;
+
+    color: #F2F9FC;
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    border: 0;
+}
+
+.landing-body {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-around;
+    margin-top: 145px;
+}
+
+.landing-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.landing-info-title {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 72px;
+    line-height: 98px;
+    font-feature-settings: 'salt' on, 'liga' off;
+    color: #273248;
+    text-align: start;
+    max-width: 540px;
+    margin: 0;
+}
+
+.landing-info-text {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 32px;
+    font-feature-settings: 'salt' on, 'liga' off;
+    color: #273248;
+    text-align: start;
+    max-width: 540px;
+    height: 128px;
+    margin: 16px 0;
+}
+
+.landing-info-button {
+    width: 464px;
+    height: 64px;
+
+    background: #0077B6;
+    border-radius: 16px;
+    border: 0;
+
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 22px;
+    color: #FFFFFF;
+}
+
+.landing-button, .landing-info-button {
+    cursor: pointer;
+}
+
+.landing-image-container {
+    position: relative;
+}
+
+.landing-demo-image {
+    z-index: 1;
+    width: 648px;
+    height: 460px;
+    box-shadow: 0px 4px 10px rgba(242, 249, 252, 0.5);
+}  
