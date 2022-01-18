@@ -8,14 +8,22 @@ const Login = () => {
     <section className="flex-division">
       <section className="hero">
           <h2 className="hero-logo" >My<strong className='hero-logo-altcolor'>Brand</strong>Safe</h2>
-          <h1 className="hero-title">Protege tu nombre</h1>
-          <p className="hero-text">La búsqueda impulsada por bots, el reconocimiento avanzado dominios fraudulentos, descubrirán las posibles infracciones por ti.</p>
+          <div className="hero-info">
+            <h1 className="hero-info-title">Deja de perder ventas </h1>
+            <p className="hero-info-text">Sé parte del cambio. Necesitamos que te registres para poder ofrecerte las mejores herramientas para salvaguardar tu marca.</p>
+          </div>
       </section>
       <section className="form-section">
           <form className="form-body">
 
-            <h3 className="form-title" >Login</h3>
+            {/* <div className="form-field bottom-line">
+              <h3 className="form-title" >Acceso</h3>
+              <p className="form-title-span">Si ya eres miembro puedes registarte con tu Email y contraseña.</p>
+            </div> */}
 
+              <h3 className="form-title" >Acceso</h3>
+              <p className="form-title-span">Si ya eres miembro puedes registarte con tu Email y contraseña.</p>
+          
 
             <div className="form-field">
               <label className="form-label" htmlFor="loginEmail">Email</label>
@@ -27,7 +35,10 @@ const Login = () => {
               <input className="form-input" type="password" name="loginPassword" id="loginPassword" />
             </div>
 
-            <span className="form-remember" >Recuerdame</span>
+            <div className="form-remember">
+              <input className="form-remember-input" type="checkbox" name="loginRemember" id="loginRemember" />
+              <label className="form-remember-label" htmlFor="loginRemember">Recuerdame</label>
+            </div>
 
             <button className="form-button" >Continuar</button>
 

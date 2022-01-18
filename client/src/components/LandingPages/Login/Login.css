@@ -27,7 +27,17 @@
     color: #F2F9FC;
 }
 
-.hero-title {
+.hero-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 527px;
+    margin: 0 auto;
+    min-height: calc(100vh - 200px);
+}
+
+.hero-info-title {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 800;
@@ -36,20 +46,18 @@
     font-feature-settings: 'salt' on, 'liga' off;
     color: #F2F9FC;
     text-align: start;
-    margin: 240px 0 0 90px;
 }
 
-.hero-text {
+.hero-info-text {
     font-family: 'Inter';
     font-style: normal;
-    font-weight: normal;
+    font-weight: 400;
     font-size: 18px;
     line-height: 32px;
     font-feature-settings: 'salt' on, 'liga' off;
     color: #F2F9FC;
-    margin-left: 90px;
     text-align: start;
-    width: 450px;
+    padding-right: 90px;
 }
 
 .form-section{
@@ -59,10 +67,13 @@
 }
 
 .form-body{
-    margin: 172px 136px;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    justify-content: center;
+    text-align: left;
+    min-height: 100vh;
+    width: 45vh;
+    margin: 0 auto;
 }
 
 .form-title {
@@ -71,9 +82,28 @@
     font-weight: bold;
     font-size: 32px;
     line-height: 26px;
-    text-align: start;
 
-    color: #0077B6;;
+    color: #000000;
+    margin-bottom: 16px;
+}
+
+.form-title-span {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 28px;
+
+    color: #8692A6;
+    border-bottom: 1px solid #A9A9A9;
+    padding-bottom: 16px;
+    margin-bottom: 32px;
+}
+
+.form-field {
+    margin-bottom: 85px;
+    display: flex;
+    flex-direction: column;
 }
 
 .form-label {
@@ -84,6 +114,91 @@
     line-height: 22px;
 
     color: #0077B6;
+    margin: 0 0 5px 16px;
+}
+
+.form-input {
+    padding: 12px 16px;
+
+    width: 464px;
+    height: 64px;
+
+    background: #FFFFFF;
+
+    border: 1px solid #48CAE4;
+    box-sizing: border-box;
+    border-radius: 20px;
+
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+    color: #0077B6;
+}
+
+.form-input:focus {
+    border: 1px solid #0077B6;
+    outline: none;
+}
+
+.form-remember {
+    margin-bottom: 32px;
+}
+
+.form-remember-input{
+    background: #FFFFFF;
+    border: 0.5px solid #0077B6;
+}
+
+.form-remember-label{
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+
+    margin-left: 10px;
+    color: #696F79;
+}
+
+.form-button{
+    width: 464px;
+    height: 64px;
+    background: #0077B6;
+    border-radius: 16px;
+
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 22px;
+
+    color: #FFFFFF;
+
+    margin-bottom: 48px;
+}
+
+.form-button:hover {
+    background: #FFFFFF;
+    color: #0077B6;
+    border: 1px solid #0077B6;
+}
+
+.form-login {
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 22px;
+
+    color: #696F79;
+    text-align: center;
+}
+
+.form-login-link{
+    color: #0077B6;
+    text-decoration: none;
 }
 
 /* .form-input {
