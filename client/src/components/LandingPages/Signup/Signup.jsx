@@ -3,7 +3,7 @@ import Logo from '../Login/Logo 3.png'
 import '../Login/Login.css'
 
 
-const Signin = () => {
+const Signup = () => {
   return <div class="super">
   <div class="divbrand1">
     <div>
