@@ -1,10 +1,8 @@
 import 'normalize.css'
-import './App.css';
+import './styles/main.scss';
 import React, { useState } from 'react'
-import {BrowserRouter} from 'react-router-dom'
-// import Header from './components/Header'
-// import Footer from './components/Footer'
-import Main from './components/Main'
+import {BrowserRouter} from 'react-router-dom';
+import Signup from './components/LandingPages/Signup'
 import { sessionContext } from './context/sessionContext' 
 import axios from 'axios';
 
@@ -27,9 +25,6 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <sessionContext.Provider value={sessionObj}>
-          {/* <Header/> */}
-          <Main/>
-          {/* <Footer/> */}
         </sessionContext.Provider>
       </BrowserRouter>
     </div>
