@@ -13,3 +13,31 @@
     justify-content: center;
     align-items: center;
 }
+
+// Extra large devices
+@mixin xl {
+   @media (max-width: 1440px) {
+       @content;
+   }
+}
+
+// Large devices
+@mixin lg {
+   @media (max-width: 1200px) {
+       @content;
+   }
+}
+
+// Medium devices
+@mixin md {
+   @media (max-width: 992px) {
+       @content;
+   }
+}
+
+// Small devices
+@mixin sm {
+    @media (max-width: 768px) {
+        @content;
+    }
+}
