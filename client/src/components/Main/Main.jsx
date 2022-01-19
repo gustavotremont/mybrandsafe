@@ -1,17 +1,7 @@
-import React from 'react'
-import { Routes, Route } from 'react-router-dom'
-import Dashboard from "../Dashboard";
-import Landing from '../Landing';
+import React from "react";
 
-function Main() {
-  return (
-    <main>
-        <Routes>
-          <Route path='/' element={<Landing/>}/>
-          <Route path='dashboard/*' element={<Dashboard/>}/>
-        </Routes>
-    </main>
-  )
-}
+const Main = () => {
+  return <div>Main</div>;
+};
 
-export default Main
+export default Main;
