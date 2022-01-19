@@ -4,8 +4,9 @@
     justify-content: center;
     text-align: left;
     min-height: 100vh;
-    width: 45vh;
+    width: 50vh;
     margin: 0 auto;
+    overflow: hidden;
 
     &--title {
         @include font-style('Nunito', normal, bold, 32px, 26px, $primary-color);
@@ -64,7 +65,7 @@
     &--button-back{
         width: 200px;
         height: 50px;
-        margin: 0 auto;
+        margin-left: 136px;
         background: $primary-color;
         border-radius: 16px;
         @include font-style('Nunito', normal, bold, 20px, 22px, #FFFFFF);
@@ -77,15 +78,57 @@
     }
 }
 
+.imageFiles-input {
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+
+    bottom: 320px;
+    cursor: pointer;
+}
+
+.imageFiles-label {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    @include font-style('Nunito', normal, normal, 14px, 22px, $primary-color);
+
+    width: 464px;
+    height: 165px;
+    background: #FFFFFF;
+    border: 1px solid #48CAE4;
+    // box-sizing: border-box;
+    border-radius: 20px;
+
+    &--button {
+        display: flex;
+        justify-content: space-around;
+
+        padding: 5px 15px;
+        width: 198px;
+        height: 34px;
+        background: #0077B6;
+        border-radius: 20px;
+        @include font-style('Nunito', normal, 600, 14px, 22px, #F2F9FC);
+    }
+}
+
+.file-icon {
+    width: 24px;
+    height: 24px;
+}
+
 .stepper {
     height: 9px;
-    width: 212px;
+    width: 220px;
     background: #81C9E8;
     border-radius: 20px;  
     
     position: absolute;
-    bottom: 80px;
-    right: 245px;
+    bottom: 5%;
+    right: 19%;
 }
 
 .stepper-progress {
@@ -94,8 +137,16 @@
     border-radius: 20px;  
     
     position: absolute;
-    bottom: 80px;
-    right: 245px;
+    bottom: 5%;
+    left: 69%;
+
+    @include xl {
+        left: 65%;
+    }
+
+    @include lg {
+        left: 59%;
+    }
 
     transition: 1s;
 
