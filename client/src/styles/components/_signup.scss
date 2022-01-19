@@ -1,0 +1,114 @@
+.signup-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    min-height: 100vh;
+    width: 45vh;
+    margin: 0 auto;
+
+    &--title {
+        @include font-style('Nunito', normal, bold, 32px, 26px, $primary-color);
+        margin-bottom: 16px;
+    }
+
+    &--span {
+        @include font-style('Inter', normal, normal, 18px, 28px, $text-color);
+        border-bottom: 1px solid $logo-color;
+        padding-bottom: 16px;
+        margin-bottom: 32px;
+    }
+
+    &--field{
+        margin-bottom: 46px;
+        display: flex;
+        flex-direction: column;
+
+        @include font-style('Nunito', normal, normal, 18px, 22px, $primary-color);
+
+        &--label{
+            margin: 0 0 5px 16px;
+        }
+
+        &--input{
+            padding: 12px 16px;
+            width: 464px;
+            height: 64px;
+            background: #FFFFFF;
+            border: 1px solid $secundary-color;
+            box-sizing: border-box;
+            border-radius: 20px;
+
+            &:focus {
+                border: 1px solid $primary-color;
+                outline: none;
+            }
+        }
+    }
+
+    &--button{
+        width: 464px;
+        height: 64px;
+        background: $primary-color;
+        border-radius: 16px;
+        @include font-style('Nunito', normal, bold, 24px, 22px, #FFFFFF);
+        margin-bottom: 16px;
+
+        &:hover{
+            background: #FFFFFF;
+            color: $primary-color;
+            border: 1px solid $primary-color;
+        }
+    }
+
+    &--button-back{
+        width: 200px;
+        height: 50px;
+        margin: 0 auto;
+        background: $primary-color;
+        border-radius: 16px;
+        @include font-style('Nunito', normal, bold, 20px, 22px, #FFFFFF);
+
+        &:hover{
+            background: #FFFFFF;
+            color: $primary-color;
+            border: 1px solid $primary-color;
+        }
+    }
+}
+
+.stepper {
+    height: 9px;
+    width: 212px;
+    background: #81C9E8;
+    border-radius: 20px;  
+    
+    position: absolute;
+    bottom: 80px;
+    right: 245px;
+}
+
+.stepper-progress {
+    height: 9px;
+    background: $primary-color;
+    border-radius: 20px;  
+    
+    position: absolute;
+    bottom: 80px;
+    right: 245px;
+
+    transition: 1s;
+
+    &--0 {
+        width: 53px;
+    }
+    &--1 {
+        width: 106px;
+    }
+    &--2 {
+        width: 162px;
+    }
+    &--3 {
+        width: 206px;
+    }
+}
