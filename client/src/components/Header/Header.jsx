@@ -1,4 +1,5 @@
 import React from 'react'
+import Nav from '../Nav'
 
 function Header() {
   return (
@@ -9,4 +10,3 @@ function Header() {
 }
 
 export default Header
-
