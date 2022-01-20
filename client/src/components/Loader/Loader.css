@@ -1,0 +1,19 @@
+.loader {
+    height: 0%;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #0077B6;;
+    overflow-y: hidden;
+    transition: 1s;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.is-loading {
+    height: 100%;
+}
