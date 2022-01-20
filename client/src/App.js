@@ -1,23 +1,37 @@
 import 'normalize.css'
 import './styles/main.scss';
-import React, { useState } from 'react'
-import {BrowserRouter} from 'react-router-dom';
-import Signup from './components/LandingPages/Signup'
+import React, { useState, useEffect } from 'react'
+import { BrowserRouter } from 'react-router-dom';
 import { sessionContext } from './context/sessionContext' 
+import Main from './components/Main'
 import axios from 'axios';
 
 function App() {
-  const [session, setSession] = useState(false)
+  const [session, setSession] = useState('')
 
-  const authSession = () => {
-    axios.post('/api/session/authLogin')
+  const authSession = (sessionCredential) => {
+    axios.post(`/api/session/auth/?credential=${sessionCredential}`)
       .then( res => {
-        setSession(true)
+        setSession(res.data.credential)
       })
       .catch( error => {
-        setSession(false)
+        setSession('')
       })
   }
+
+  useEffect(() => {
+    const authUserReturn = () => {
+      axios.post(`/api/session/auth?userReturn=true`)
+        .then( res => {
+          setSession(res.data.credential)
+        })
+        .catch( error => {
+          setSession('')
+        })
+    }
+
+    authUserReturn()
+  }, [])
 
   const sessionObj = {session, setSession, authSession}
 
@@ -25,7 +39,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <sessionContext.Provider value={sessionObj}>
-          
+          <Main/>
         </sessionContext.Provider>
       </BrowserRouter>
     </div>
