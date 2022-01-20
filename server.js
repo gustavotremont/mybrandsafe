@@ -5,7 +5,6 @@ const path = require("path");
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
 const passport = require('passport')
-require("dotenv").config();
 
 const { sequelize } = require("./models");
 
