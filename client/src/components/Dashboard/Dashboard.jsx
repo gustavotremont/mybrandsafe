@@ -19,7 +19,7 @@ const Dashboard = () => {
 
   return (
     <section>
-      <iframe src={dashboardURl()} className="dashboard-view"/>
+      <iframe title='dashboard' src={dashboardURl()} className="dashboard-view"/>
     </section>
   );
 };
