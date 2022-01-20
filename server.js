@@ -20,6 +20,7 @@ const app = express();
 const port = process.env.PORT || 5000;
 
 /****************** Express Settings ******************/
+app.disable('x-powered-by');
 app.use(express.json()); //Para habilitar envio de JSON al servidor
 app.use(express.urlencoded({ extended: false })); //Habilita la lectura del body por metodo post
 app.use(express.static(path.join(__dirname, "client/build")));
@@ -37,7 +38,7 @@ app.use('/api', usersRoutes)
 app.use('/api', assetsRoutes)
 app.use("/api", reportsRoutes);
 app.use("/api", sessionRoutes);
-app.get('/', (req,res) =>{
+app.get('*', (req,res) =>{
     res.sendFile(path.join(__dirname+'/client/build/index.html'));
 });
 

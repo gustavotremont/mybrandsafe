@@ -6,6 +6,6 @@ routes.post('/session/login', (req, res, next) => {
     session.login(req, res, next);
 }) 
 routes.post('/session/logout', session.logout)
-routes.post('/session/auth', session.authLogin)
+routes.post('/session/auth', session.authSession)
 
 module.exports = routes;

@@ -1,17 +1,25 @@
-import React from 'react'
+import React, {useState} from "react";
 import { Routes, Route } from 'react-router-dom'
+import Landing from '../Landing'
+import Login from '../Login'
+import Signup from '../Signup'
+import Loader from '../Loader'
 import Dashboard from "../Dashboard";
-import Landing from '../Landing';
 
-function Main() {
+const Main = () => {
+  const [Loading, setLoading] = useState(false);
+
   return (
     <main>
-        <Routes>
-          <Route path='/' element={<Landing/>}/>
-          <Route path='dashboard/*' element={<Dashboard/>}/>
-        </Routes>
+      <Loader isLoading={Loading}/>
+      <Routes>
+        <Route path='/' element={ <Landing/> } />
+        <Route path='/login' element={ <Login isLoading={setLoading}/> } />
+        <Route path='/signup' element={ <Signup isLoading={setLoading}/> } />
+        <Route path='/dashboard' element={ <Dashboard/> } />
+      </Routes>
     </main>
-  )
-}
+  );
+};
 
-export default Main
+export default Main;

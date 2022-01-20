@@ -49,15 +49,18 @@
 }
 
 .landing-body {
-    display: grid;
-    grid-template-columns: auto auto;
+    display: flex;
     justify-content: space-around;
-    margin-top: 145px;
+    align-items: center;
+    background: transparent url(https://firebasestorage.googleapis.com/v0/b/mybrandsafe.appspot.com/o/pages-images%2Flanding-image-background.png?alt=media&token=f8f20fd0-cad6-4e57-a030-dc4fae925f42) right center/auto no-repeat;
+    min-height: calc(100vh - 121px);
 }
 
 .landing-info {
     display: flex;
     flex-direction: column;
+    margin: 0 auto;
+    text-align: left;
 }
 
 .landing-info-title {
@@ -68,7 +71,6 @@
     line-height: 98px;
     font-feature-settings: 'salt' on, 'liga' off;
     color: #273248;
-    text-align: start;
     max-width: 540px;
     margin: 0;
 }
@@ -81,7 +83,6 @@
     line-height: 32px;
     font-feature-settings: 'salt' on, 'liga' off;
     color: #273248;
-    text-align: start;
     max-width: 540px;
     height: 128px;
     margin: 16px 0;

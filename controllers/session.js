@@ -18,7 +18,7 @@ const login = async (req, res) => {
                 const passwordMatch = await bcrypt.verifyPassword(password, user.password)
                 if (passwordMatch) {
                     
-                    const token = jwt.sign({ uuid: user.uuid, email: user.uuid }, process.env.JWT_SECRET, {
+                    const token = jwt.sign({ credential: user.email }, process.env.JWT_SECRET, {
                         expiresIn: '1d'
                     });
     
@@ -28,7 +28,7 @@ const login = async (req, res) => {
                         httpOnly: true,
                     })
                     .status(200)
-                    .json({ status: 'success', msg: 'Login Success' })
+                    .json({ status: 'success', msg: 'Login Success', credential: user.email })
                 }else {
                     errors.push("las contraseñas es incorrecta")
                     return res.status(403).json({ status: 'error', errors })
@@ -55,22 +55,66 @@ const logout = (req, res) => {
     }
 }
 
-const authLogin = async (req, res) => {
-    if (req.cookies['access_token']) {
-        jwt.verify(req.cookies['access_token'], process.env.JWT_SECRET, (err, decoded) => {
-            decoded 
-                ? res.status(200).json({ status: true, msg: 'is login' })
-                : res.status(401).json({ status: false, msg: 'is not login' })
-        });
-    } else {
-        res.status(401).json({ status: 'error', msg: 'something go wrong' })
+// const authSession = async (req, res) => {
+//     const { credential } = req.query
+//     try {
+//         if (req.cookies['access_token']) {
+//             jwt.verify(req.cookies['access_token'], process.env.JWT_SECRET, (err, decoded) => {
+//                 decoded.credential === credential
+//                     ? res.status(200).json({ status: true, msg: 'is login' })
+//                     : res.status(401).json({ status: false, msg: 'is not login' })
+//             });
+//         } else {
+//             res.status(401).json({ status: 'error', msg: 'is not login' })
+//         }
+//     } catch (err) {
+//         res.status(401).json({ status: false, msg: 'session terminated due to an unexpected error' })
+//     }
+// }
+
+// const authUserReturn = async (req, res) => {
+//     try {
+//         if (req.cookies['access_token']) {
+//             jwt.verify(req.cookies['access_token'], process.env.JWT_SECRET, (err, decoded) => {
+                
+//             });
+//         } else {
+//             res.status(401).json({ status: 'error', msg: 'is not login' })
+//         }
+//     } catch (err) {
+//         res.status(401).json({ status: false, msg: 'session terminated due to an unexpected error' })
+//     }
+// }
+
+const authSession = async (req, res) => {
+    const { credential, userReturn } = req.query
+    try {
+        if (req.cookies['access_token']) {
+            jwt.verify(req.cookies['access_token'], process.env.JWT_SECRET, async (err, decoded) => {
+                console.log(decoded)
+                if(userReturn) {
+                    const user = await Users.findOne({ where: { email: decoded.credential }})
+                    user
+                        ? res.status(200).json({ status: true, msg: 'is login', credential: user.email })
+                        : res.status(401).json({ status: false, msg: 'the user is not register in the database' })
+                } else {
+                    credential === decoded.credential
+                        ? res.status(200).json({ status: true, msg: 'is login', credential })
+                        : res.status(401).json({ status: false, msg: 'is not login' })
+                }
+            });
+        } else {
+            res.status(401).json({ status: 'error', msg: 'is not login' })
+        }
+    } catch (err) {
+        res.status(401).json({ status: false, msg: 'session terminated due to an unexpected error' })
     }
 }
 
 const session = {
     login,
     logout,
-    authLogin,
+    authSession,
 }
 
 module.exports = session

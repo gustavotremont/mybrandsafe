@@ -1,0 +1,43 @@
+@mixin font-style($fontFamily, $fontStyle, $fontWeight, $fontSize, $lineHeight, $color) {
+    font-family: $fontFamily;
+    font-style: $fontStyle;
+    font-weight: $fontWeight;
+    font-size: $fontSize;
+    line-height: $lineHeight;
+    color: $color
+}
+
+@mixin flex-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+// Extra large devices
+@mixin xl {
+   @media (max-width: 1440px) {
+       @content;
+   }
+}
+
+// Large devices
+@mixin lg {
+   @media (max-width: 1200px) {
+       @content;
+   }
+}
+
+// Medium devices
+@mixin md {
+   @media (max-width: 992px) {
+       @content;
+   }
+}
+
+// Small devices
+@mixin sm {
+    @media (max-width: 768px) {
+        @content;
+    }
+}

@@ -1,35 +1,26 @@
-import React, {useContext, useState} from "react";
-import { Navigate, Routes, Route, Link, useMatch  } from 'react-router-dom'
+import './Dashboard.css'
+import React, {useContext, useEffect} from "react";
+import { useNavigate } from 'react-router-dom'
 import { sessionContext } from '../../context/sessionContext'
 
 const Dashboard = () => {
+  const navigate = useNavigate()
   const {session} = useContext(sessionContext)
-  const path = useMatch('/dashboard/login')
 
-  if(!session){
-    return <Navigate to="/" />
+  useEffect(() => {
+    if(!session) navigate('/')
+  }, [session])
+
+  const dashboardURl = () => {
+    if(session === 'leroymerlin@mail.com') return 'https://fandibreak.github.io/plantillasmybrand/dashboardleroy.html'
+    else if(session === 'panaria@mail.com') return 'https://fandibreak.github.io/plantillasmybrand/dashboardpanaria.html'
+    else return 'https://fandibreak.github.io/plantillasmybrand/dashboardbase.html'
   }
 
   return (
-    <div>
-      <div>
-        soy la landing
-      </div> 
-
-      <Routes>
-        <Route index element={ <div> <h2>login</h2> </div>} />
-        <Route path="login" index element={ <div> <h2>login</h2> </div>} />
-        <Route path="signup" element={ <div> <h2>registro</h2> </div> }/>    
-      </Routes>
-
-      <div>
-        {
-          path 
-            ? <Link to="signup/">register</Link>
-            : <Link to="login/">login</Link>
-        } 
-      </div>
-    </div>
+    <section>
+      <iframe src={dashboardURl()} className="dashboard-view"/>
+    </section>
   );
 };
 
