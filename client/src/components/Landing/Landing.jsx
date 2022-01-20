@@ -1,20 +1,20 @@
 import './Landing.css'
-import React, {useContext} from "react";
-import { useNavigate } from 'react-router-dom'
+import React, {useContext, useEffect} from "react";
+import { Link, useNavigate } from 'react-router-dom'
 import { sessionContext } from '../../context/sessionContext'
 
 const Landing = () => {
   const navigate = useNavigate()
-  const {session} = useContext(sessionContext)
+  const { session } = useContext(sessionContext)
 
-  if(session){
-    navigate('/dashboard')
-  }
+  useEffect(() => {
+    if(session) navigate('/dashboard')
+  }, [session])
 
   return (
     <section className='landing'>
       <div className='landing-header'>
-        <h2 className="landing-logo" >My<strong className='landing-logo-altcolor'>Brand</strong>Safe</h2>
+        <Link to='/' className="landing-logo" >My<strong className='landing-logo-altcolor'>Brand</strong>Safe</Link>
         <div className='landing-buttons' >
           <button className='landing-button' onClick={() => navigate('/signup')} >Regístrate</button>
           <button className='landing-button' onClick={() => navigate('/login')} >Accede</button>
@@ -29,9 +29,7 @@ const Landing = () => {
         </article>
         <div className='landing-image-container'>
             <img className='landing-demo-image' src="https://firebasestorage.googleapis.com/v0/b/mybrandsafe.appspot.com/o/pages-images%2Fhome-landing.png?alt=media&token=0a36aaa5-87f3-4c3d-8a6f-d08effee4018" alt="demo visual de la aplicación" />
-            {/* <img className='landing-background-image' src="https://firebasestorage.googleapis.com/v0/b/mybrandsafe.appspot.com/o/pages-images%2Flanding-image-background.png?alt=media&token=f8f20fd0-cad6-4e57-a030-dc4fae925f42" alt="diseño de fondo" /> */}
-        </div>
-        <div></div>
+         </div>
       </div>
 
     </section>

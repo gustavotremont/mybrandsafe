@@ -1,46 +1,43 @@
-import React, {useContext, useState} from "react";
-import { Link, Navigate } from 'react-router-dom'
+import React, {useContext, useEffect} from "react";
+import { Link, useNavigate } from 'react-router-dom'
 import { sessionContext } from '../../context/sessionContext'
 import axios from 'axios';
 
-const Login = () => {
-  
-  const [errors, setErrors] = useState([])
+const Login = ({isLoading}) => {
+  const navigate = useNavigate()
   const {session, setSession} = useContext(sessionContext)
 
   const handleSubmit = (e) => {
     e.preventDefault()
-
-    const email = e.target.email.value
-    const password = e.target.password.value
+    isLoading(true)
+    const email = e.target.loginEmail.value
+    const password = e.target.loginPassword.value
     axios.post('/api/session/login', {email, password})
       .then( res => {
-        setSession(true)
+        setSession(res.data.credential)
+        isLoading(false)
       })
       .catch( error => {
-        setErrors(error.response.data.errors)
+        console.log(error.response.data.errors)
+        isLoading(false)
       })
   }
 
-  const handleErrors = (errs) => {
-    return errs.map(err => <p>{err}</p>)
-  }
-
-  if(session){
-    return <Navigate to="/" />
-  }
+  useEffect(() => {
+    if(session) navigate('/dashboard')
+  }, [session])
 
   return (
     <section className="flex-division">
       <section className="hero">
-          <h2 className="hero--logo" >My<strong className='hero--logo--altcolor'>Brand</strong>Safe</h2>
+          <Link to='/' className="hero--logo" >My<strong className='hero--logo--altcolor'>Brand</strong>Safe</Link>
           <div className="hero--info">
             <h1 className="hero--info--title">Deja de perder ventas </h1>
             <p className="hero--info--text">Sé parte del cambio. Necesitamos que te registres para poder ofrecerte las mejores herramientas para salvaguardar tu marca.</p>
           </div>
       </section>
       <section className="form-section">
-          <form className="form-body">
+          <form className="form-body" onSubmit={handleSubmit} >
             <h3 className="form-body--title" >Acceso</h3>
             <p className="form-body--span">Si ya eres miembro puedes registarte con tu Email y contraseña.</p>
           
