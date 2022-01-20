@@ -3,21 +3,23 @@ import { Link, useNavigate } from 'react-router-dom'
 import { sessionContext } from '../../context/sessionContext'
 import axios from 'axios';
 
-const Login = () => {
+const Login = ({isLoading}) => {
   const navigate = useNavigate()
   const {session, setSession} = useContext(sessionContext)
 
   const handleSubmit = (e) => {
     e.preventDefault()
-
+    isLoading(true)
     const email = e.target.loginEmail.value
     const password = e.target.loginPassword.value
     axios.post('/api/session/login', {email, password})
       .then( res => {
         setSession(res.data.credential)
+        isLoading(false)
       })
       .catch( error => {
         console.log(error.response.data.errors)
+        isLoading(false)
       })
   }
 

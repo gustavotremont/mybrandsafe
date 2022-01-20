@@ -6,7 +6,7 @@ import FormSteps from './FormSteps'
 import axios from 'axios'
 import { handleUpload } from '../../firestorage/firebase'
 
-const Signup = () => {
+const Signup = ({isLoading}) => {
   const navigate = useNavigate()
   const {session} = useContext(sessionContext)
   const [step, setStep] = useState(0);
@@ -38,6 +38,7 @@ const Signup = () => {
   }
 
   const handleSignUp = async () => {
+    isLoading(true)
     axios.post('/api/users', 
       {
         email: formInputs.email,
@@ -59,13 +60,16 @@ const Signup = () => {
           })
           .then( res => {
             navigate('/login')
+            isLoading(false)
           })
           .catch( error => {
             console.log(error.response.data.errors)
+            isLoading(false)
           })
       })
       .catch( error => {
         console.log(error.response.data.errors)
+        isLoading(false)
       })
   }
 
