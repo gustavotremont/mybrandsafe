@@ -82,8 +82,9 @@
 	opacity: 0;
 	overflow: hidden;
 	position: absolute;
-
-    bottom: 320px;
+    width: 464px;
+    height: 165px;
+    bottom: 260px;
     cursor: pointer;
 }
 
@@ -118,6 +119,11 @@
 .file-icon {
     width: 24px;
     height: 24px;
+}
+
+.upload-file{
+    width: 143px;
+    height: 143px;
 }
 
 .stepper {
